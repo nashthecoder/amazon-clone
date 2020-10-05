@@ -1,16 +1,18 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
-import Checkout from './components/Checkout';
-import Login from './components/Login';
-import { auth } from './firebase.js';
-import { useStateValue } from './components/StateProvider';
-import Footer from './components/Footer';
+import React, { useState } from 'react'
+import { useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Home from './components/Home'
+import Checkout from './components/Checkout'
+import Login from './components/Login'
+import { auth } from './firebase.js'
+import { useStateValue } from './components/StateProvider'
+import Profile from './components/Profile'
+import Footer from './components/Footer'
 
 function App() {
   const [{}, dispatch] = useStateValue();
+  const [profile, setProfile] = useState([]);
 
 //Runs once when the app loads.
   useEffect(() => {
@@ -28,7 +30,7 @@ function App() {
         // the user is logged out
         dispatch({
           type: "SET_USER",
-          user: null,
+          user: authUser ? authUser : null,
         });
       }
     });
@@ -45,6 +47,9 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login />
+          </Route>
+          <Route path='/profile'>
+            <Profile />
           </Route>
           <Route path='/'>
           <Header />
