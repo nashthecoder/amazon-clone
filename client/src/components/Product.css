@@ -19,12 +19,15 @@
     object-fit: contain;
     margin-bottom: 15px;
     padding: 15px;
-
+    transition: all 0.5s;
 }
+
+.product > img:hover {
+    transform: scale(1.05);
+  }
 
 .product_price {
     margin-top: 5px;
-    
 }
 
 .product_rating {
@@ -38,7 +41,6 @@
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
 }
-
 
 .product_info {
     height: 100px;

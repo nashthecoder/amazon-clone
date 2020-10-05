@@ -31,7 +31,7 @@ function Home() {
                     title='Anker Wireless Charger' 
                     price={11.89} 
                     image="https://images-na.ssl-images-amazon.com/images/I/51cYdJDM6UL._AC_SL1500_.jpg" 
-                    rating={5} />
+                    rating={3} />
                     <Product 
                     id="986456"
                     title='DayBetter LED Strip Lights' 

@@ -1,11 +1,15 @@
 import React from 'react';
 import './CheckoutProduct.css';
+import StarIcon from '@material-ui/icons/Star';
+import StarHalfIcon from '@material-ui/icons/StarHalf';
 import { useStateValue } from './StateProvider';
+
 // import Subtotal from './Subtotal';
 
 function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
     const [{ basket }, dispatch] = useStateValue();
-
+    let halfRating = (rating - Math.floor(rating)) * 10;
+    
     console.log(id, image, title, price);
 
     const removeFromBasket = () => {
@@ -26,13 +30,18 @@ function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
                     <small>$</small>
                     <strong>{price}</strong>
                 </p>
-                {/* <div className="checkoutProduct__rating">
-                    {Array(rating)
-                    .fill()
-                    .map((_, i) => (
-                        <p>🌟</p>
-                    ))}
-                </div> */}
+                <div className="checkoutProduct__rating">
+                    {
+                        Array(Math.floor(rating))
+                            .fill()
+                            .map((_, index) => (
+                                <StarIcon key={index} />
+                            ))
+                    }
+                    {
+                        (halfRating > 0) ? <StarHalfIcon /> : <></>
+                    }
+                </div>
                 {!hideButton && (
                     <button onClick={removeFromBasket}>Remove from Basket</button>
                 )}

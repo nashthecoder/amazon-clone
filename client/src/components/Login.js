@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { Link, useHistory } from 'react-router-dom';
-import { auth} from '../firebase.js';
+import { auth } from '../firebase.js';
 
 
 function Login() {
@@ -9,28 +9,28 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const signIn = e => {
+    const signIn = (e) => {
         e.preventDefault();
-        
-        auth.signInWithEmailAndPassword(email, password)
+        auth
+            .signInWithEmailAndPassword(email, password)
             .then(auth => {
                 history.push('/')
             })
-            .catch(error => alert(error.message))
+            .catch(error => console.warn(error.message))
     }
 
-    const register = e => {
+    const register = (e) => {
         e.preventDefault();
-        
-        auth.createUserWithEmailAndPassword(email, password)
+        auth
+            .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
             //user successfully created with email and password
             if (auth) {
-                history.push('/')
+                history.push('/profile')
             }
                 console.log(auth);
             }) 
-            .catch(error => alert(error.message))
+            .catch(error =>console.warn(error.message))
     }
 
     return (
