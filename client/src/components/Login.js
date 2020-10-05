@@ -5,34 +5,34 @@ import { auth } from '../firebase.js';
 
 
 function Login() {
-    const history = useHistory();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const history = useHistory()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+
 
     const signIn = (e) => {
-        e.preventDefault();
+        e.preventDefault() //stops refresh
         auth
             .signInWithEmailAndPassword(email, password)
-            .then(auth => {
-                history.push('/')
+            .then((auth) => {
+                // redirect to homepage
+                history.push("/")
             })
-            .catch(error => console.warn(error.message))
+            .catch(e => console.warn(e.message))
     }
 
     const register = (e) => {
-        e.preventDefault();
+        e.preventDefault() //stops refresh
         auth
             .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
-            //user successfully created with email and password
-            if (auth) {
-                history.push('/profile')
-            }
-                console.log(auth);
-            }) 
-            .catch(error =>console.warn(error.message))
-    }
+                // create and redirect to homepage
+                history.push("/profile")
+            })
+            .catch(e => console.warn(e.message))
 
+    }
     return (
         <div className='login'>
             <Link to='/'>

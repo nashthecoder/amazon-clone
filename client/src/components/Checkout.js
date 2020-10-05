@@ -1,8 +1,8 @@
-import React from 'react';
-import './Checkout.css';
-import { useStateValue } from './StateProvider';
-import CheckoutProduct from './CheckoutProduct';
-import Subtotal from './Subtotal';
+import React from 'react'
+import './Checkout.css'
+import { useStateValue } from './StateProvider'
+import CheckoutProduct from './CheckoutProduct'
+import Subtotal from './Subtotal'
 // import FlipMove from 'react-flip-move';
 
 function Checkout() {
