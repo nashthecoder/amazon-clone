@@ -7,7 +7,7 @@ import { useStateValue } from './StateProvider';
 // import Subtotal from './Subtotal';
 
 function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
-    const [{ basket }, dispatch] = useStateValue();
+    const [{}, dispatch] = useStateValue();
     let halfRating = (rating - Math.floor(rating)) * 10;
     
     console.log(id, image, title, price);
@@ -22,7 +22,7 @@ function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
 
     return (
         <div className='checkoutProduct'>
-            <img className='checkoutProduct__image' src={image} />
+            <img className='checkoutProduct__image' src={image} alt="" />
 
             <div className='checkoutProduct__info'>
                 <p className='checkoutProduct__title'>{title}</p>
