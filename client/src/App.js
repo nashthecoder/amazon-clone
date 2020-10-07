@@ -12,7 +12,7 @@ import Footer from './components/Footer'
 
 function App() {
   const [{}, dispatch] = useStateValue();
-  const [profile, setProfile] = useState([]);
+  const [] = useState([]);
 
 //Runs once when the app loads.
   useEffect(() => {

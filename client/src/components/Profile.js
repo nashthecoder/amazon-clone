@@ -7,7 +7,7 @@ import { useStateValue } from "./StateProvider";
 
 function Profile() {
   const history = useHistory();
-  const [{ user, profile }, dispatch] = useStateValue();
+  const [{ user, profile }] = useStateValue();
   const [name, setName] = useState(profile?.userName);
   const [phone, setPhone] = useState(profile?.phone);
 
