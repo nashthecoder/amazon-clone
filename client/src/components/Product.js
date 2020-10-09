@@ -6,7 +6,7 @@ import StarIcon from '@material-ui/icons/Star';
 import { useStateValue } from './StateProvider';
 
 function Product ({ id, title, image, price, rating }) {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
   let halfRating = (rating - Math.floor(rating)) * 10;
     let outline = 0;
     halfRating > 0 ? outline = (5 - Math.ceil(rating)) : outline = (5 - Math.floor(rating))
