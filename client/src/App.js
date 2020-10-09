@@ -7,7 +7,7 @@ import Checkout from './components/Checkout'
 import Login from './components/Login'
 import { auth } from './firebase.js'
 import { useStateValue } from './components/StateProvider'
-import Orders from './components/Orders';
+import Payments from './components/Payments'
 import Profile from './components/Profile'
 import Footer from './components/Footer'
 
@@ -42,9 +42,9 @@ function App() {
     <Router>
       <div className='app'>
         <Switch>
-          <Route path="/orders">
+          <Route path="/payments">
             <Header />
-            <Orders />
+            <Payments />
           </Route>
           <Route path='/checkout'>
             <Header />
