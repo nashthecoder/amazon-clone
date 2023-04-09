@@ -8,5 +8,5 @@ Features:
 👉 Checkout page.
 
 
-*_Deployed application : clone-ke.netlify.app_*
+*_Deployed application : [clone-ke.netlify.app](https://clone-ke.netlify.app/)_*
 
