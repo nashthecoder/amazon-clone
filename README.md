@@ -8,5 +8,5 @@ Features:
 👉 Checkout page.
 
 
-*_Deployed application : clone-amazone-ke.netlify.app_*
+*_Deployed application : [clone-amazone-ke.netlify.app](https://clone-amazone-ke.netlify.app/)_*
 
